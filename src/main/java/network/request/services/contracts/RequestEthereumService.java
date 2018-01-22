@@ -4,6 +4,7 @@ import java.util.List;
 
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
+import network.request.services.entities.RequestNetworkRequest;
 import network.request.services.entities.RequestNetworkResponse;
 
 /**
@@ -271,10 +272,10 @@ public interface RequestEthereumService {
      * 
      * @param requestId
      *            requestId of the request
-     * @return the object containing the request
+     * @return request object
      * @throws RequestNetworkException
      */
-    Object getRequest(String requestId) throws RequestNetworkException;
+    RequestNetworkRequest getRequest(String requestId) throws RequestNetworkException;
 
     /**
      * Get a request's events. Alias of requestCoreServices.getRequestEvents().
