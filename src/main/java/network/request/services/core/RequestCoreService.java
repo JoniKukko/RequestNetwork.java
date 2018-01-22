@@ -2,6 +2,7 @@ package network.request.services.core;
 
 import java.util.List;
 
+import network.request.services.entities.RequestNetworkEvent;
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkRequest;
 import network.request.services.entities.RequestNetworkResponse;
@@ -70,7 +71,7 @@ public interface RequestCoreService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId) throws RequestNetworkException;
 
     /**
      * Get a request's events.
@@ -82,7 +83,7 @@ public interface RequestCoreService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
      * Get a request's events.
@@ -96,7 +97,7 @@ public interface RequestCoreService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
      * Get the list of requests connected to an address.

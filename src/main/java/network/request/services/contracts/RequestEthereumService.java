@@ -2,6 +2,7 @@ package network.request.services.contracts;
 
 import java.util.List;
 
+import network.request.services.entities.RequestNetworkEvent;
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
 import network.request.services.entities.RequestNetworkRequest;
@@ -36,7 +37,8 @@ public interface RequestEthereumService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data) throws RequestNetworkException;
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data)
+            throws RequestNetworkException;
 
     /**
      * Create a request as payee.
@@ -171,7 +173,8 @@ public interface RequestEthereumService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse paymentAction(String requestId, int amount, int additionals, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse paymentAction(String requestId, int amount, int additionals, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Refund a request as payee.
@@ -198,7 +201,8 @@ public interface RequestEthereumService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse refundAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse refundAction(String requestId, int amount, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Add subtracts to a request as payee.
@@ -228,7 +232,8 @@ public interface RequestEthereumService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse subtractAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse subtractAction(String requestId, int amount, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Add addtionals to a request as payer.
@@ -255,7 +260,8 @@ public interface RequestEthereumService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse additionalAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse additionalAction(String requestId, int amount, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Get info from currency contract (generic method).
@@ -278,17 +284,17 @@ public interface RequestEthereumService {
     RequestNetworkRequest getRequest(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -297,10 +303,10 @@ public interface RequestEthereumService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -311,7 +317,8 @@ public interface RequestEthereumService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock)
+            throws RequestNetworkException;
 
     /**
      * Decode data from input tx (generic method).
@@ -338,11 +345,10 @@ public interface RequestEthereumService {
      * 
      * @param requestId
      *            requestId of the request
-     * @return object containing the events from the currency contract of the
-     *         request
+     * @return list of events from currency contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsCurrencyContractInfo(String requestId) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsCurrencyContractInfo(String requestId) throws RequestNetworkException;
 
     /**
      * Get request events from currency contract (generic method).
@@ -351,11 +357,11 @@ public interface RequestEthereumService {
      *            requestId of the request
      * @param fromBlock
      *            search events from this block
-     * @return object containing the events from the currency contract of the
-     *         request
+     * @return list of events from currency contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsCurrencyContractInfo(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsCurrencyContractInfo(String requestId, int fromBlock)
+            throws RequestNetworkException;
 
     /**
      * Get request events from currency contract (generic method).
@@ -366,11 +372,10 @@ public interface RequestEthereumService {
      *            search events from this block
      * @param toBlock
      *            search events until this block
-     * @return object containing the events from the currency contract of the
-     *         request
+     * @return list of events from currency contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsCurrencyContractInfo(String requestId, int fromBlock, int toBlock)
+    List<RequestNetworkEvent> getRequestEventsCurrencyContractInfo(String requestId, int fromBlock, int toBlock)
             throws RequestNetworkException;
 
 }

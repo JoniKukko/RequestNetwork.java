@@ -2,6 +2,7 @@ package network.request.services.extensions;
 
 import java.util.List;
 
+import network.request.services.entities.RequestNetworkEvent;
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
 import network.request.services.entities.RequestNetworkRequest;
@@ -90,17 +91,17 @@ public interface RequestSynchroneExtensionEscrowService {
     Object getRequestExtensionInfo(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -109,10 +110,10 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
+     * Get a request's events. Alias of RequestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -123,18 +124,17 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<Object> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
      * Get request events from extension contract (generic method).
      * 
      * @param requestId
      *            requestId of the request
-     * @return object containing the events from the extension contract of the
-     *         request
+     * @return list of events from the extension contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsExtensionInfo(String requestId) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId) throws RequestNetworkException;
 
     /**
      * Get request events from extension contract (generic method).
@@ -143,11 +143,10 @@ public interface RequestSynchroneExtensionEscrowService {
      *            requestId of the request
      * @param fromBlock
      *            search events from this block
-     * @return object containing the events from the extension contract of the
-     *         request
+     * @return list of events from the extension contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsExtensionInfo(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
      * Get request events from extension contract (generic method).
@@ -158,10 +157,9 @@ public interface RequestSynchroneExtensionEscrowService {
      *            search events from this block
      * @param toBlock
      *            search events until this block
-     * @return object containing the events from the extension contract of the
-     *         request
+     * @return list of events from the extension contract
      * @throws RequestNetworkException
      */
-    Object getRequestEventsExtensionInfo(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
 
 }
