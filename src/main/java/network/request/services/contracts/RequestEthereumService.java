@@ -2,7 +2,7 @@ package network.request.services.contracts;
 
 import java.util.List;
 
-import network.request.services.RequestNetworkException;
+import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
 
 /**

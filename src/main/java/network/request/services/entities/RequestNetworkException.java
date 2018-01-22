@@ -1,4 +1,4 @@
-package network.request.services;
+package network.request.services.entities;
 
 public class RequestNetworkException extends Exception {
 

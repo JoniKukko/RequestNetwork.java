@@ -2,7 +2,7 @@ package network.request.services.core;
 
 import java.util.List;
 
-import network.request.services.RequestNetworkException;
+import network.request.services.entities.RequestNetworkException;
 
 /**
  * Interface for the Request Core contract.
