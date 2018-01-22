@@ -3,6 +3,7 @@ package network.request.services.extensions;
 import java.util.List;
 
 import network.request.services.RequestNetworkException;
+import network.request.services.entities.RequestNetworkOptions;
 
 /**
  * Interface for the Request Escrow extension.
@@ -40,7 +41,7 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return object containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayeeAction(String requestId, Object options) throws RequestNetworkException;
+    Object releaseToPayeeAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Release payment to payer as payee or escrow.
@@ -63,7 +64,7 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return object containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayerAction(String requestId, Object options) throws RequestNetworkException;
+    Object releaseToPayerAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Get a request by its requestId. Alias of RequestCoreServices.getRequest().
