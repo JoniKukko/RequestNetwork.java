@@ -4,10 +4,13 @@ import java.util.List;
 
 import network.request.services.RequestNetworkException;
 
+/**
+ * Interface for the Request Core contract.
+ */
 public interface RequestCoreService {
 
     /**
-     * Get the number of the last request (N.B: number !== id)
+     * Get the number of the last request (N.B: number !== id).
      * 
      * @return the number of the last request
      * @throws RequestNetworkException
@@ -15,7 +18,7 @@ public interface RequestCoreService {
     int getCurrentNumRequest() throws RequestNetworkException;
 
     /**
-     * Get the version of the contract
+     * Get the version of the contract.
      * 
      * @return the version of the contract
      * @throws RequestNetworkException
@@ -23,7 +26,7 @@ public interface RequestCoreService {
     int getVersion() throws RequestNetworkException;
 
     /**
-     * Get the estimation of ether (in wei) needed to create a request
+     * Get the estimation of ether (in wei) needed to create a request.
      * 
      * @param expectedAmount
      *            amount expected of the request
@@ -38,7 +41,7 @@ public interface RequestCoreService {
             throws RequestNetworkException;
 
     /**
-     * Get a request by its requestId
+     * Get a request by its requestId.
      * 
      * @param requestId
      *            requestId of the request
@@ -48,7 +51,7 @@ public interface RequestCoreService {
     Object getRequest(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request and method called by the hash of a transaction
+     * Get a request and method called by the hash of a transaction.
      * 
      * @param hash
      *            hash of the ethereum transaction
@@ -58,7 +61,7 @@ public interface RequestCoreService {
     Object getRequestByTransactionHash(String hash) throws RequestNetworkException;
 
     /**
-     * Get a request's events
+     * Get a request's events.
      * 
      * @param requestId
      *            requestId of the request
@@ -68,7 +71,7 @@ public interface RequestCoreService {
     List<Object> getRequestEvents(String requestId) throws RequestNetworkException;
 
     /**
-     * Get a request's events
+     * Get a request's events.
      * 
      * @param requestId
      *            requestId of the request
@@ -80,7 +83,7 @@ public interface RequestCoreService {
     List<Object> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Get a request's events
+     * Get a request's events.
      * 
      * @param requestId
      *            requestId of the request
@@ -94,7 +97,7 @@ public interface RequestCoreService {
     List<Object> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
-     * Get the list of requests connected to an address
+     * Get the list of requests connected to an address.
      * 
      * @param address
      *            address to get the requests
@@ -104,7 +107,7 @@ public interface RequestCoreService {
     List<Object> getRequestsByAddress(String address) throws RequestNetworkException;
 
     /**
-     * Get the list of requests connected to an address
+     * Get the list of requests connected to an address.
      * 
      * @param address
      *            address to get the requests
@@ -116,7 +119,7 @@ public interface RequestCoreService {
     List<Object> getRequestsByAddress(String address, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Get the list of requests connected to an address
+     * Get the list of requests connected to an address.
      * 
      * @param address
      *            address to get the requests
@@ -130,7 +133,7 @@ public interface RequestCoreService {
     List<Object> getRequestsByAddress(String address, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
-     * Get Ipfs file
+     * Get Ipfs file.
      * 
      * @param hash
      * @return
