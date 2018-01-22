@@ -3,6 +3,7 @@ package network.request.services.core;
 import java.util.List;
 
 import network.request.services.entities.RequestNetworkException;
+import network.request.services.entities.RequestNetworkResponse;
 
 /**
  * Interface for the Request Core contract.
@@ -55,10 +56,10 @@ public interface RequestCoreService {
      * 
      * @param hash
      *            hash of the ethereum transaction
-     * @return The object containing the request and the transaction
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object getRequestByTransactionHash(String hash) throws RequestNetworkException;
+    RequestNetworkResponse getRequestByTransactionHash(String hash) throws RequestNetworkException;
 
     /**
      * Get a request's events.

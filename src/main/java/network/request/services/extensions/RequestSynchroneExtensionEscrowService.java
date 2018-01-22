@@ -4,6 +4,7 @@ import java.util.List;
 
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
+import network.request.services.entities.RequestNetworkResponse;
 
 /**
  * Interface for the Request Escrow extension.
@@ -25,10 +26,10 @@ public interface RequestSynchroneExtensionEscrowService {
      * 
      * @param requestId
      *            requestId of the request
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayeeAction(String requestId) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayeeAction(String requestId) throws RequestNetworkException;
 
     /**
      * Release payment to Payee as payer or escrow.
@@ -38,20 +39,20 @@ public interface RequestSynchroneExtensionEscrowService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayeeAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayeeAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Release payment to payer as payee or escrow.
      * 
      * @param requestId
      *            requestId of the request
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayerAction(String requestId) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayerAction(String requestId) throws RequestNetworkException;
 
     /**
      * Release payment to payer as payee or escrow.
@@ -61,10 +62,10 @@ public interface RequestSynchroneExtensionEscrowService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object releaseToPayerAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayerAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Get a request by its requestId. Alias of RequestCoreServices.getRequest().

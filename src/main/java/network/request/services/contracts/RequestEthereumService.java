@@ -4,6 +4,7 @@ import java.util.List;
 
 import network.request.services.entities.RequestNetworkException;
 import network.request.services.entities.RequestNetworkOptions;
+import network.request.services.entities.RequestNetworkResponse;
 
 /**
  * Interface for the Request Ethereum currency contract.
@@ -17,10 +18,10 @@ public interface RequestEthereumService {
      *            address of the payer
      * @param amountInitial
      *            amount initial expected of the request
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object createRequestAsPayee(String payer, int amountInitial) throws RequestNetworkException;
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial) throws RequestNetworkException;
 
     /**
      * Create a request as payee.
@@ -31,10 +32,10 @@ public interface RequestEthereumService {
      *            amount initial expected of the request
      * @param data
      *            Json of the request's details
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object createRequestAsPayee(String payer, int amountInitial, String data) throws RequestNetworkException;
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data) throws RequestNetworkException;
 
     /**
      * Create a request as payee.
@@ -47,10 +48,10 @@ public interface RequestEthereumService {
      *            Json of the request's details
      * @param extension
      *            address of the extension contract of the request
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object createRequestAsPayee(String payer, int amountInitial, String data, String extension)
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data, String extension)
             throws RequestNetworkException;
 
     /**
@@ -66,10 +67,10 @@ public interface RequestEthereumService {
      *            address of the extension contract of the request
      * @param extensionParams
      *            list of parameters for the extension
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object createRequestAsPayee(String payer, int amountInitial, String data, String extension,
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data, String extension,
             List<Object> extensionParams) throws RequestNetworkException;
 
     /**
@@ -88,10 +89,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object createRequestAsPayee(String payer, int amountInitial, String data, String extension,
+    RequestNetworkResponse createRequestAsPayee(String payer, int amountInitial, String data, String extension,
             List<Object> extensionParams, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
@@ -99,10 +100,10 @@ public interface RequestEthereumService {
      * 
      * @param requestId
      *            requestId of the payer
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object accept(String requestId) throws RequestNetworkException;
+    RequestNetworkResponse accept(String requestId) throws RequestNetworkException;
 
     /**
      * Accept a request as payer.
@@ -112,20 +113,20 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object accept(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse accept(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Cancel a request as payer or payee.
      * 
      * @param requestId
      *            requestId of the payer
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object cancel(String requestId) throws RequestNetworkException;
+    RequestNetworkResponse cancel(String requestId) throws RequestNetworkException;
 
     /**
      * Cancel a request as payer or payee.
@@ -135,10 +136,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object cancel(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse cancel(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Pay a request.
@@ -149,10 +150,10 @@ public interface RequestEthereumService {
      *            amount to pay in wei
      * @param additionals
      *            additional to declaire in wei
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object paymentAction(String requestId, int amount, int additionals) throws RequestNetworkException;
+    RequestNetworkResponse paymentAction(String requestId, int amount, int additionals) throws RequestNetworkException;
 
     /**
      * Pay a request.
@@ -166,10 +167,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object paymentAction(String requestId, int amount, int additionals, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse paymentAction(String requestId, int amount, int additionals, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Refund a request as payee.
@@ -178,10 +179,10 @@ public interface RequestEthereumService {
      *            requestId of the payer
      * @param amount
      *            amount to refund in wei
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object refundAction(String requestId, int amount) throws RequestNetworkException;
+    RequestNetworkResponse refundAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
      * Refund a request as payee.
@@ -193,10 +194,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object refundAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse refundAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Add subtracts to a request as payee.
@@ -208,9 +209,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object subtractAction(String requestId, int amount) throws RequestNetworkException;
+    RequestNetworkResponse subtractAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
      * Add subtracts to a request as payee.
@@ -222,10 +224,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object subtractAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse subtractAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Add addtionals to a request as payer.
@@ -234,10 +236,10 @@ public interface RequestEthereumService {
      *            requestId of the payer
      * @param amount
      *            subtract to declare in wei
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object additionalAction(String requestId, int amount) throws RequestNetworkException;
+    RequestNetworkResponse additionalAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
      * Add addtionals to a request as payer.
@@ -249,10 +251,10 @@ public interface RequestEthereumService {
      * @param options
      *            options for the method (gasPrice, gas, value, from,
      *            numberOfConfirmation)
-     * @return object containing the request and the transaction hash
+     * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    Object additionalAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse additionalAction(String requestId, int amount, RequestNetworkOptions options) throws RequestNetworkException;
 
     /**
      * Get info from currency contract (generic method).
