@@ -5,12 +5,12 @@ import java.util.List;
 import network.request.services.RequestNetworkException;
 
 /**
- * Interface for the Request Ethereum currency contract
+ * Interface for the Request Ethereum currency contract.
  */
 public interface RequestEthereumService {
 
     /**
-     * Create a request as payee
+     * Create a request as payee.
      * 
      * @param payer
      *            address of the payer
@@ -22,7 +22,7 @@ public interface RequestEthereumService {
     Object createRequestAsPayee(String payer, int amountInitial) throws RequestNetworkException;
 
     /**
-     * Create a request as payee
+     * Create a request as payee.
      * 
      * @param payer
      *            address of the payer
@@ -36,7 +36,7 @@ public interface RequestEthereumService {
     Object createRequestAsPayee(String payer, int amountInitial, String data) throws RequestNetworkException;
 
     /**
-     * Create a request as payee
+     * Create a request as payee.
      * 
      * @param payer
      *            address of the payer
@@ -53,7 +53,7 @@ public interface RequestEthereumService {
             throws RequestNetworkException;
 
     /**
-     * Create a request as payee
+     * Create a request as payee.
      * 
      * @param payer
      *            address of the payer
@@ -72,7 +72,7 @@ public interface RequestEthereumService {
             List<Object> extensionParams) throws RequestNetworkException;
 
     /**
-     * Create a request as payee
+     * Create a request as payee.
      * 
      * @param payer
      *            address of the payer
@@ -94,7 +94,7 @@ public interface RequestEthereumService {
             List<Object> extensionParams, Object options) throws RequestNetworkException;
 
     /**
-     * Accept a request as payer
+     * Accept a request as payer.
      * 
      * @param requestId
      *            requestId of the payer
@@ -104,7 +104,7 @@ public interface RequestEthereumService {
     Object accept(String requestId) throws RequestNetworkException;
 
     /**
-     * Accept a request as payer
+     * Accept a request as payer.
      * 
      * @param requestId
      *            requestId of the payer
@@ -117,7 +117,7 @@ public interface RequestEthereumService {
     Object accept(String requestId, Object options) throws RequestNetworkException;
 
     /**
-     * Cancel a request as payer or payee
+     * Cancel a request as payer or payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -127,7 +127,7 @@ public interface RequestEthereumService {
     Object cancel(String requestId) throws RequestNetworkException;
 
     /**
-     * Cancel a request as payer or payee
+     * Cancel a request as payer or payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -140,7 +140,7 @@ public interface RequestEthereumService {
     Object cancel(String requestId, Object options) throws RequestNetworkException;
 
     /**
-     * Pay a request
+     * Pay a request.
      * 
      * @param requestId
      *            requestId of the payer
@@ -154,7 +154,7 @@ public interface RequestEthereumService {
     Object paymentAction(String requestId, int amount, int additionals) throws RequestNetworkException;
 
     /**
-     * Pay a request
+     * Pay a request.
      * 
      * @param requestId
      *            requestId of the payer
@@ -171,7 +171,7 @@ public interface RequestEthereumService {
     Object paymentAction(String requestId, int amount, int additionals, Object options) throws RequestNetworkException;
 
     /**
-     * Refund a request as payee
+     * Refund a request as payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -183,7 +183,7 @@ public interface RequestEthereumService {
     Object refundAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
-     * Refund a request as payee
+     * Refund a request as payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -198,7 +198,7 @@ public interface RequestEthereumService {
     Object refundAction(String requestId, int amount, Object options) throws RequestNetworkException;
 
     /**
-     * Add subtracts to a request as payee
+     * Add subtracts to a request as payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -212,7 +212,7 @@ public interface RequestEthereumService {
     Object subtractAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
-     * Add subtracts to a request as payee
+     * Add subtracts to a request as payee.
      * 
      * @param requestId
      *            requestId of the payer
@@ -227,7 +227,7 @@ public interface RequestEthereumService {
     Object subtractAction(String requestId, int amount, Object options) throws RequestNetworkException;
 
     /**
-     * Add addtionals to a request as payer
+     * Add addtionals to a request as payer.
      * 
      * @param requestId
      *            requestId of the payer
@@ -239,7 +239,7 @@ public interface RequestEthereumService {
     Object additionalAction(String requestId, int amount) throws RequestNetworkException;
 
     /**
-     * Add addtionals to a request as payer
+     * Add addtionals to a request as payer.
      * 
      * @param requestId
      *            requestId of the payer
@@ -254,7 +254,7 @@ public interface RequestEthereumService {
     Object additionalAction(String requestId, int amount, Object options) throws RequestNetworkException;
 
     /**
-     * Get info from currency contract (generic method)
+     * Get info from currency contract (generic method).
      * 
      * @param requestId
      *            requestId of the request
@@ -264,7 +264,7 @@ public interface RequestEthereumService {
     Object getRequestCurrencyContractInfo(String requestId) throws RequestNetworkException;
 
     /**
-     * Alias of RequestCoreService.getRequest()
+     * Get a request by its requestId. Alias of RequestCoreService.getRequest().
      * 
      * @param requestId
      *            requestId of the request
@@ -274,7 +274,7 @@ public interface RequestEthereumService {
     Object getRequest(String requestId) throws RequestNetworkException;
 
     /**
-     * Alias of requestCoreServices.getRequestEvents()
+     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -284,7 +284,7 @@ public interface RequestEthereumService {
     List<Object> getRequestEvents(String requestId) throws RequestNetworkException;
 
     /**
-     * Alias of requestCoreServices.getRequestEvents()
+     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -296,7 +296,7 @@ public interface RequestEthereumService {
     List<Object> getRequestEvents(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Alias of requestCoreServices.getRequestEvents()
+     * Get a request's events. Alias of requestCoreServices.getRequestEvents().
      * 
      * @param requestId
      *            requestId of the request
@@ -310,7 +310,7 @@ public interface RequestEthereumService {
     List<Object> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
-     * Decode data from input tx (generic method)
+     * Decode data from input tx (generic method).
      * 
      * @param data
      * @return object with the name of the function and the parameters
@@ -319,7 +319,7 @@ public interface RequestEthereumService {
     Object decodeInputData(String data) throws RequestNetworkException;
 
     /**
-     * generate web3 method of the contract from name and parameters in array
+     * Generate web3 method of the contract from name and parameters in array.
      * (generic method)
      * 
      * @param name
@@ -330,7 +330,7 @@ public interface RequestEthereumService {
     Object generateWeb3Method(String name, List<Object> parameters) throws RequestNetworkException;
 
     /**
-     * Get request events from currency contract (generic method)
+     * Get request events from currency contract (generic method).
      * 
      * @param requestId
      *            requestId of the request
@@ -341,7 +341,7 @@ public interface RequestEthereumService {
     Object getRequestEventsCurrencyContractInfo(String requestId) throws RequestNetworkException;
 
     /**
-     * Get request events from currency contract (generic method)
+     * Get request events from currency contract (generic method).
      * 
      * @param requestId
      *            requestId of the request
@@ -354,7 +354,7 @@ public interface RequestEthereumService {
     Object getRequestEventsCurrencyContractInfo(String requestId, int fromBlock) throws RequestNetworkException;
 
     /**
-     * Get request events from currency contract (generic method)
+     * Get request events from currency contract (generic method).
      * 
      * @param requestId
      *            requestId of the request
