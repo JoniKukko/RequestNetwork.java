@@ -45,6 +45,19 @@
 					<encoding>${request.network.source.encoding}</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>net.orfjackal.retrolambda</groupId>
+				<artifactId>retrolambda-maven-plugin</artifactId>
+				<version>2.5.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process-main</goal>
+							<goal>process-test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
