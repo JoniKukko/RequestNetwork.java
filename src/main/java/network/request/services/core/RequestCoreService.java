@@ -137,12 +137,12 @@ public interface RequestCoreService {
     List<Object> getRequestsByAddress(String address, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
-     * Get the file content from ipfs.
+     * Get a file from ipfs from its hash. Alias for IpfsService.getFile().
      * 
      * @param hash
-     *            hash of the file
-     * @return the content's file
+     *            hash of the file to get
+     * @return the data of the file
      * @throws RequestNetworkException
      */
-    Object getIpfsFile(String hash) throws RequestNetworkException;
+    String getIpfsFile(String hash) throws RequestNetworkException;
 }
