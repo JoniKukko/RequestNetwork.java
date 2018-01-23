@@ -66,7 +66,8 @@ public final class RequestNetworkFactory {
         if (initialized) {
             throw new IllegalStateException("RequestNetwork already initialized");
         }
-        // TODO: init web3j and ipfs components
+        // TODO: init ipfs components
+        Web3Singleton.INSTANCE.init(provider, networkId);
         RequestNetworkSingleton.INSTANCE.setSynchroneExtensionEscrowService(null);
         RequestNetworkSingleton.INSTANCE.setEthereumService(null);
         RequestNetworkSingleton.INSTANCE.setCoreService(null);
