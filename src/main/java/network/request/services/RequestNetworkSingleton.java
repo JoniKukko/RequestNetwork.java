@@ -10,14 +10,12 @@ import network.request.services.extensions.RequestSynchroneExtensionEscrowServic
 enum RequestNetworkSingleton implements RequestNetwork {
     INSTANCE;
 
-    private final RequestSynchroneExtensionEscrowService synchroneExtensionEscrowService;
-    private final RequestEthereumService ethereumService;
-    private final RequestCoreService coreService;
+    private RequestSynchroneExtensionEscrowService synchroneExtensionEscrowService;
+    private RequestEthereumService ethereumService;
+    private RequestCoreService coreService;
 
-    RequestNetworkSingleton() {
-        this.synchroneExtensionEscrowService = null;
-        this.ethereumService = null;
-        this.coreService = null;
+    void setSynchroneExtensionEscrowService(RequestSynchroneExtensionEscrowService synchroneExtensionEscrowService) {
+        this.synchroneExtensionEscrowService = synchroneExtensionEscrowService;
     }
 
     @Override
@@ -25,9 +23,17 @@ enum RequestNetworkSingleton implements RequestNetwork {
         return synchroneExtensionEscrowService;
     }
 
+    void setEthereumService(RequestEthereumService ethereumService) {
+        this.ethereumService = ethereumService;
+    }
+
     @Override
     public RequestEthereumService getEthereumService() {
         return ethereumService;
+    }
+
+    void setCoreService(RequestCoreService coreService) {
+        this.coreService = coreService;
     }
 
     @Override
