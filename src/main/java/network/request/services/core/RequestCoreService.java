@@ -97,7 +97,8 @@ public interface RequestCoreService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock)
+            throws RequestNetworkException;
 
     /**
      * Get the list of requests connected to an address.
@@ -136,10 +137,11 @@ public interface RequestCoreService {
     List<Object> getRequestsByAddress(String address, int fromBlock, int toBlock) throws RequestNetworkException;
 
     /**
-     * Get Ipfs file.
+     * Get the file content from ipfs.
      * 
      * @param hash
-     * @return
+     *            hash of the file
+     * @return the content's file
      * @throws RequestNetworkException
      */
     Object getIpfsFile(String hash) throws RequestNetworkException;
