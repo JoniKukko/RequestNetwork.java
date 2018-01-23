@@ -53,6 +53,18 @@ public final class RequestNetworkFactory {
     }
 
     /**
+     * Initialize RequestNetwork with public ipfs.
+     * 
+     * @param provider
+     *            Web3jProvider
+     * @param networkId
+     *            networkId to use in web3j
+     */
+    public static void init(Object provider, int networkId) {
+        init(provider, networkId, true);
+    }
+
+    /**
      * Initialize RequestNetwork with given values.
      * 
      * @param provider
