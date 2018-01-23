@@ -78,7 +78,7 @@ public final class RequestNetworkFactory {
         if (initialized) {
             throw new IllegalStateException("RequestNetwork already initialized");
         }
-        // TODO: init ipfs components
+        IpfsSingleton.INSTANCE.usePublicIpfs(useIpfsPublic);
         Web3Singleton.INSTANCE.init(provider, networkId);
         // TODO: init singleton with correct objects
         RequestNetworkSingleton.INSTANCE.init(null, null, null);
