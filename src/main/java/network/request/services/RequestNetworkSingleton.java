@@ -14,8 +14,11 @@ enum RequestNetworkSingleton implements RequestNetwork {
     private RequestEthereumService ethereumService;
     private RequestCoreService coreService;
 
-    void setSynchroneExtensionEscrowService(RequestSynchroneExtensionEscrowService synchroneExtensionEscrowService) {
+    void init(RequestSynchroneExtensionEscrowService synchroneExtensionEscrowService,
+            RequestEthereumService ethereumService, RequestCoreService coreService) {
         this.synchroneExtensionEscrowService = synchroneExtensionEscrowService;
+        this.ethereumService = ethereumService;
+        this.coreService = coreService;
     }
 
     @Override
@@ -23,17 +26,9 @@ enum RequestNetworkSingleton implements RequestNetwork {
         return synchroneExtensionEscrowService;
     }
 
-    void setEthereumService(RequestEthereumService ethereumService) {
-        this.ethereumService = ethereumService;
-    }
-
     @Override
     public RequestEthereumService getEthereumService() {
         return ethereumService;
-    }
-
-    void setCoreService(RequestCoreService coreService) {
-        this.coreService = coreService;
     }
 
     @Override

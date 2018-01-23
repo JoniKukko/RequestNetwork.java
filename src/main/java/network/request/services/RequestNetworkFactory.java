@@ -68,9 +68,8 @@ public final class RequestNetworkFactory {
         }
         // TODO: init ipfs components
         Web3Singleton.INSTANCE.init(provider, networkId);
-        RequestNetworkSingleton.INSTANCE.setSynchroneExtensionEscrowService(null);
-        RequestNetworkSingleton.INSTANCE.setEthereumService(null);
-        RequestNetworkSingleton.INSTANCE.setCoreService(null);
+        // TODO: init singleton with correct objects
+        RequestNetworkSingleton.INSTANCE.init(null, null, null);
         initialized = true;
     }
 
