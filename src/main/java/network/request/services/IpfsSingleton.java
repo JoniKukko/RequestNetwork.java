@@ -1,6 +1,3 @@
-/**
- * 
- */
 package network.request.services;
 
 import network.request.services.entities.RequestNetworkException;

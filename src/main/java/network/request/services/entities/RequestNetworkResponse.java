@@ -8,15 +8,33 @@ public class RequestNetworkResponse {
     private final RequestNetworkRequest request;
     private final String transactionHash;
 
+    /**
+     * Builds new response instance
+     * 
+     * @param request
+     *            original request
+     * @param transactionHash
+     *            hash of transaction
+     */
     public RequestNetworkResponse(RequestNetworkRequest request, String transactionHash) {
         this.request = request;
         this.transactionHash = transactionHash;
     }
 
+    /**
+     * Returns the original request.
+     * 
+     * @return original request
+     */
     public RequestNetworkRequest getRequest() {
         return request;
     }
 
+    /**
+     * Hash of transaction
+     * 
+     * @return Hash as string
+     */
     public String getTransactionHash() {
         return transactionHash;
     }

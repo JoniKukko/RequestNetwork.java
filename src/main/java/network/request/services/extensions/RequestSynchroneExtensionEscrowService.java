@@ -44,7 +44,8 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse releaseToPayeeAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayeeAction(String requestId, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Release payment to payer as payee or escrow.
@@ -67,7 +68,8 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return response containing the request and the transaction hash
      * @throws RequestNetworkException
      */
-    RequestNetworkResponse releaseToPayerAction(String requestId, RequestNetworkOptions options) throws RequestNetworkException;
+    RequestNetworkResponse releaseToPayerAction(String requestId, RequestNetworkOptions options)
+            throws RequestNetworkException;
 
     /**
      * Get a request by its requestId. Alias of RequestCoreServices.getRequest().
@@ -124,7 +126,8 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return list of events about the request
      * @throws RequestNetworkException
      */
-    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEvents(String requestId, int fromBlock, int toBlock)
+            throws RequestNetworkException;
 
     /**
      * Get request events from extension contract (generic method).
@@ -146,7 +149,8 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return list of events from the extension contract
      * @throws RequestNetworkException
      */
-    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock)
+            throws RequestNetworkException;
 
     /**
      * Get request events from extension contract (generic method).
@@ -160,6 +164,7 @@ public interface RequestSynchroneExtensionEscrowService {
      * @return list of events from the extension contract
      * @throws RequestNetworkException
      */
-    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock, int toBlock) throws RequestNetworkException;
+    List<RequestNetworkEvent> getRequestEventsExtensionInfo(String requestId, int fromBlock, int toBlock)
+            throws RequestNetworkException;
 
 }

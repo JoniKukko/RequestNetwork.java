@@ -11,10 +11,10 @@ import network.request.services.extensions.RequestSynchroneExtensionEscrowServic
  * instance.
  */
 public interface RequestNetwork {
-    
+
     RequestEthereumService getEthereumService();
-    
+
     RequestSynchroneExtensionEscrowService geSynchroneExtensionEscrowService();
-    
+
     RequestCoreService getCoreService();
 }

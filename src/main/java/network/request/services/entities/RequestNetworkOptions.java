@@ -15,31 +15,71 @@ public class RequestNetworkOptions {
         private int from;
         private int numberOfConfirmations;
 
+        /**
+         * Set gas price
+         * 
+         * @param gasPrice
+         *            gas price
+         * @return this builder
+         */
         public Builder setGasPrice(int gasPrice) {
             this.gasPrice = gasPrice;
             return this;
         }
 
+        /**
+         * Set gas amount
+         * 
+         * @param gas
+         *            gas to set
+         * @return this builder
+         */
         public Builder setGas(int gas) {
             this.gas = gas;
             return this;
         }
 
+        /**
+         * Set value
+         * 
+         * @param value
+         *            value to set
+         * @return this builder
+         */
         public Builder setValue(int value) {
             this.value = value;
             return this;
         }
 
+        /**
+         * Set from field
+         * 
+         * @param from
+         *            from to set
+         * @return this builder
+         */
         public Builder setFrom(int from) {
             this.from = from;
             return this;
         }
 
+        /**
+         * Set number of confirmations
+         * 
+         * @param numberOfConfirmations
+         *            number to set
+         * @return this builder
+         */
         public Builder setNumberOfConfirmations(int numberOfConfirmations) {
             this.numberOfConfirmations = numberOfConfirmations;
             return this;
         }
 
+        /**
+         * Builds immutable options model
+         * 
+         * @return new immutable options instance
+         */
         public RequestNetworkOptions build() {
             return new RequestNetworkOptions(gasPrice, gas, value, from, numberOfConfirmations);
         }
@@ -59,22 +99,47 @@ public class RequestNetworkOptions {
         this.numberOfConfirmations = numberOfConfirmations;
     }
 
+    /**
+     * Gas price from options
+     * 
+     * @return gas price
+     */
     public int getGasPrice() {
         return gasPrice;
     }
 
+    /**
+     * Gas from options
+     * 
+     * @return gas
+     */
     public int getGas() {
         return gas;
     }
 
+    /**
+     * Value from options
+     * 
+     * @return value
+     */
     public int getValue() {
         return value;
     }
 
+    /**
+     * From from options
+     * 
+     * @return from
+     */
     public int getFrom() {
         return from;
     }
 
+    /**
+     * Number of confirmations from options
+     * 
+     * @return number of confirmations
+     */
     public int getNumberOfConfirmations() {
         return numberOfConfirmations;
     }

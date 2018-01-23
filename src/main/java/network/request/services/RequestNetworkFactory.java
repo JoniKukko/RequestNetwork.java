@@ -10,6 +10,7 @@ public final class RequestNetworkFactory {
     private static boolean initialized = false;
 
     private RequestNetworkFactory() {
+        // TODO: default values in this class should come from configuration file
         throw new AssertionError();
     }
 

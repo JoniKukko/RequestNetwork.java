@@ -1,5 +1,8 @@
 package network.request.services.entities;
 
+/**
+ * Generic exception for RequestNetwork related problems.
+ */
 public class RequestNetworkException extends Exception {
 
     private static final long serialVersionUID = 1L;
