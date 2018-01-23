@@ -1,5 +1,8 @@
 package network.request.services.entities;
 
+/**
+ * Class presenting response of Request Network
+ */
 public class RequestNetworkResponse {
 
     private final RequestNetworkRequest request;
